@@ -1,0 +1,319 @@
+/* Fonte */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+/* body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5 !important;
+    background-size: cover;
+}
+
+
+/* Titulo */
+.titulo {
+    font-style: normal;
+    margin: 30px auto;
+    margin-left: 31px;
+    margin-right: 31px;
+    color: #34515E;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 35px;
+}
+
+.titulo h1 {
+    font-size: 29px !important;
+}
+
+
+/* Tabuleiro */
+.jogo {
+    background-color: #ffffff;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 2px 6px rgba(52, 81, 94, 0.35);
+    border-radius: 10px;
+    margin: 30px auto;
+    margin-bottom: 0px;
+}
+
+.tabuleiro {
+    width: 100px;
+    height: 100px;
+    display: block;
+    float: left;
+    color: #AABDC6;
+    font-size: 3em;
+    padding: 1px 17px;
+}
+
+
+/* Linhas do Tabuleiro */
+#primeiro, #segundo, #terceiro {
+    border-bottom: 3px solid #AABDC6;
+}
+
+#quarto, #quinto, #sexto {
+    border-bottom: 3px solid #AABDC6;
+}
+
+#segundo {
+    border-left: 3px solid #AABDC6;
+    border-right: 3px solid #AABDC6;
+}
+
+#quinto {
+    border-left: 3px solid #AABDC6;
+    border-right: 3px solid #AABDC6;
+}
+
+#oitavo {
+    border-left: 3px solid #AABDC6;
+    border-right: 3px solid #AABDC6;
+}
+
+
+/* linha curva */
+#primeiro {
+    border-bottom-left-radius: 2.5px;
+}
+
+#segundo {
+    border-top-left-radius: 2.5px;
+    border-top-right-radius: 2.5px;
+}
+
+#terceiro {
+    border-bottom-right-radius: 2.5px;
+}
+
+#quarto {
+    border-bottom-left-radius: 2.5px;
+}
+
+#sexto {
+    border-bottom-right-radius: 2.5px;
+}
+
+#oitavo {
+    border-bottom-left-radius: 2.5px;
+    border-bottom-right-radius: 2.5px;
+}
+
+.perdeu {
+    color: #AABDC6;
+    transition: 200ms;
+}
+
+
+/* Informativo */
+div #informativo {
+    border-radius: 0px 0px 10px 10px;
+    width: 300px;
+    height: 70px;
+    color: #ffffff;
+    margin: 30px auto;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#informativo p {
+    padding-top: 8%;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+}
+
+.jogador1 {
+    background: linear-gradient(175.8deg, #FF5C85 9.19%, #FF3266 91.81%);
+}
+
+.jogador2 {
+    background: linear-gradient(175.8deg, #30CB76 9.19%, #18CA68 91.81%);
+}
+
+
+/* Botoes */
+#botoes {
+    margin: 30px auto;
+    width: 304px;
+}
+
+#botoes button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #34515e;
+    border: 1px solid #34515e;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 145px;
+    height: 40px;
+}
+
+#botoes button:hover {
+    color: #ffffff;
+    background: #34515e;
+    border: 1px solid #34515e;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+#jogar-novamente {
+    margin-right: 5px;
+}
+
+#ver-estatisticas {
+    margin-left: 0px;
+}
+
+#alterar-jogadores {
+    margin-top: 77px;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    align-items: center;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
+#alterar-jogadores a {
+    color: #34515e;
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-conteudo {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0px 2px 6px rgba(52, 81, 94, 0.35);
+    border-radius: 10px;
+}
+
+.fecha {
+    color: #34515E;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fecha:hover, .fecha:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-botao button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 14px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #34515e;
+    border: 1px solid #34515e;
+    box-sizing: border-box;
+    border-radius: 2px;
+    width: 90px;
+}
+
+#modal-botao #x:hover {
+    color: #FF3266;
+}
+
+#modal-botao #o:hover {
+    color: #30CB76;
+}
+
+.modal-titulo h3 {
+    color: #34515E;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 35px;
+}
+
+.modal-corpo, .modal-botoes {
+    align-content: center;
+    text-align: center;
+}
+
+.jogador1-estatisticas {
+    color: #FF3266;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.jogador1-pontos {
+    font-size: 30px;
+    line-height: 35px;
+    color: #FF3266;
+}
+
+.jogador2-estatisticas {
+    color: #30CB76;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.jogador2-pontos {
+    font-size: 30px;
+    line-height: 35px;
+    color: #30CB76;
+}
+
+#x-estatisticas {
+    color: #AABDC6;
+    font-size: 30px;
+    line-height: 35px;
+    align-items: center;
+    text-align: center;
+}
+
+.texto-estatisticas {
+    font-size: 12px;
+    line-height: 14px;
+    color: #607D8B;
+}
+
+.estat-info {
+    font-size: 12px;
+    line-height: 14px;
+    color: #607D8B;
+}
+
+.total-geral {
+    font-size: 12px;
+    line-height: 20px;
+    color: #607D8B;
+}
