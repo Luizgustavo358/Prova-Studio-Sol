@@ -15,15 +15,15 @@
 
 ## Telas
 
-- Jogo
+### Jogo
 
-![alt text](screenshot/jogo.png){: width=150 height=100}
+![alt text](screenshot/jogo.png)
 
-- Estatísticas
+### Estatísticas
 
 ![alt text](screenshot/estatisticas.png)
 
-- Alterar o nome
+### Alterar o nome
 
 ![alt text](screenshot/alterar-nome.png)
 
