@@ -317,3 +317,27 @@ div #informativo {
     line-height: 20px;
     color: #607D8B;
 }
+
+#confirmar {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #34515e;
+    border: 1px solid #34515e;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 145px;
+    height: 40px;
+}
+
+#confirmar:hover {
+    color: #ffffff;
+    background: #34515e;
+    border: 1px solid #34515e;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
