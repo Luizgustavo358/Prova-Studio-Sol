@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <!-- icones -->
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="shortcut icon" href="img/favicon.ico">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Jogo da Velha</title>
+    </head>
+    
+    <body>
+        <div class="container">
+            <!-- Nome -->
+            <div class="titulo">
+                <h1>
+                    <img src="img/logo.svg"> <b>Jogo da Velha</b>
+                </h1>
+            </div>
+
+            <!-- Jogo da Velha -->
+            <div class="jogo">
+                <div id="primeiro" class="tabuleiro" onClick="icone(this.id)"></div>
+                <div id="segundo" class="tabuleiro" onClick="icone(this.id)"></div>
+                <div id="terceiro" class="tabuleiro" onClick="icone(this.id)"></div>
+                <div id="quarto" class="tabuleiro" onClick="icone(this.id)"></div>
+                <div id="quinto" class="tabuleiro" onClick="icone(this.id)"></div>
+                <div id="sexto" class="tabuleiro" onClick="icone(this.id)"></div>
+                <div id="setimo" class="tabuleiro" onClick="icone(this.id)"></div>
+                <div id="oitavo" class="tabuleiro" onClick="icone(this.id)"></div>
+                <div id="nono" class="tabuleiro" onClick="icone(this.id)"></div>
+            </div>
+
+            <!-- Informativo -->
+            <div id="informativo">
+                <p id="jogador-da-vez"></p>
+            </div>
+
+            <!-- Botoes -->
+            <div id="botoes">
+                <button id="jogar-novamente">Jogar Novamente</button>
+                <button id="ver-estatisticas" data-toggle="modal" data-target="modal-estatisticas">Ver Estatísticas</button>
+                <p id="alterar-jogadores">
+                    <a id="alterar">Alterar Jogadores</a>
+                </p>
+            </div>
+
+            <!-- Modal - Escolhe X ou O -->
+            <div id="modal-comeco" class="modal">
+                <div class="modal-conteudo">
+                    <div class="modal-titulo">
+                        <span id="fecha1" class="fecha">&times;</span>
+                        <h3><img src="img/logo.svg"> Jogo da Velha</h3>
+                        <hr>
+                    </div>
+                    <div class="modal-corpo">
+                        <p id="jogador-modal"><b>Jogador 1 </b> Escolha:</p>
+                    </div>
+                    <div id="modal-botao" class="modal-botoes">
+                        <button type="button" id="x" data-dismiss="modal" onClick="colocaFigura(this.id)">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <button type="button" id="o" data-dismiss="modal" onClick="colocaFigura(this.id)">
+                            <span class="fa fa-circle-o"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal - Estatisticas -->
+            <div id="modal-estatisticas" class="modal">
+                <div class="modal-conteudo">
+                    <div class="modal-titulo">
+                        <span id="fecha2" class="fecha">&times;</span>
+                        <h3>Estatísticas</h3>
+                    </div>
+                    <div class="modal-corpo">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p id="j1-ganhado" class="jogador1-pontos"></p>
+                                    <p class="jogador1-estatisticas">Jogador 1</p>                                    
+                                </div>
+                                <div class="col-sm">
+                                    <p id="x-estatisticas">X</p>
+                                </div>
+                                <div class="col-sm">
+                                    <p id="j2-ganhado" class="jogador2-pontos"></p>
+                                    <p class="jogador2-estatisticas">Jogador 2</p>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p id="tempo-medio-j1" class="jogador1-estatisticas"></p>
+                                </div>
+                                <div class="col-sm">
+                                    <p class="estat-info">Tempo médio por jogada</p>
+                                </div>
+                                <div class="col-sm">
+                                    <p id="tempo-medio-j2" class="jogador2-estatisticas"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p id="tempo-total-jogado-j1" class="jogador1-estatisticas"></p>
+                                </div>
+                                <div class="col-sm">
+                                    <p class="estat-info">Tempo total jogado</p>
+                                </div>
+                                <div class="col-sm">
+                                    <p id="tempo-total-jogado-j2" class="jogador2-estatisticas"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <p class="total-geral">Tempo total geral</p>
+                            <p id="tempo-total"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal - Alterar Jogadores -->
+            <div id="modal-alterar-jogadores" class="modal">
+                <div class="modal-conteudo">
+                    <div class="modal-titulo">
+                        <span id="fecha3" class="fecha">&times;</span>
+                        <h3>Alterar Jogadores</h3>
+                        <hr>
+                    </div>
+                    <div class="modal-corpo">
+                        <p>Deseja alterar o nome dos jogadores?</p>
+                        <form>
+                            <b>Jogador 1:</b>
+                            <input type="text" name="jogador1" placeholder="Jogador 1">
+                            <br><br>
+                            <b>Jogador 2:</b>
+                            <input type="text" name="jogador2" placeholder="Jogador 2">
+                        </form>
+                    </div>
+                    <div class="modal-botoes">
+                        <br>
+                        <button id="confirmar" type="button" data-dismiss="modal" onClick="nomeJogadores(this.jogador1, this.jogador2)">
+                            Confirmar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+    </body>
+</html>
