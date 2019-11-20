@@ -31,7 +31,7 @@
 ## O que eu usei
 
 - [Visual Studio Code](https://code.visualstudio.com/) - Para Escrever o código.
-- [FontAwesome](https://fontawesome.com/) - para utilizar ícones.
+- [Font Awesome](https://fontawesome.com/) - para utilizar ícones.
 - [Figma](https://www.figma.com/file/JTKypsWrxSFeJoNDe5pT70/Prova_Frontend-Jogo_da_velha?node-id=0%3A1) - para ver o protótipo.
 
 
